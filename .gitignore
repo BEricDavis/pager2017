@@ -1,0 +1,14 @@
+# ignore pycharm files
+.idea/*
+.idea/*.*
+.idea*
+
+# ignore python virtualenv
+/venv
+
+# ignore vim artifacts
+.swp
+
+# don't include the /conf directory
+/conf/*
+
