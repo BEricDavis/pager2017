@@ -1,12 +1,17 @@
 {
-  "ABC123": {
-    "Name": "MyPrimaryService",
-    "Schedule": "XYZ987",
-    "isPrimary": "True"
+  "Config": {
+    "URL": "mycompany.pagerduty.com"
   },
-  "DEF456": {
-    "Name": "MyBackupService",
-    "Schedule": "LMN135",
-    "isPrimary": "False"
+  "Services": {
+    "ABC123": {
+      "Name": "MyPrimaryService",
+      "Schedule": "XYZ987",
+      "isPrimary": "True"
+    },
+    "DEF456": {
+      "Name": "MyBackupService",
+      "Schedule": "LMN135",
+      "isPrimary": "False"
+    }
   }
 }
