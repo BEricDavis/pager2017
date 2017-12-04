@@ -19,8 +19,11 @@ def main(start=default_start, end=default_end):
     configure_logging(log_level)
     domain, services = load_config()
 
+    # TODO: maybe delay this conversion until after chunking, as we immediately turn the strings back to dt objs
     pd_start = dth.convert_to_pd_date(start, sod)
     pd_end = dth.convert_to_pd_date(end, eod)
+
+    periods = dth.chunk_periods(pd_start, pd_end)
 
 
 

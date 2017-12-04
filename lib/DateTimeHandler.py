@@ -27,11 +27,23 @@ def convert_to_pd_date(date_string, pd_time):
 def chunk_periods(start, end):
     """
     Break the request duration into monthly periods.
-    :param start: The yyyy-mm-dd of the starting day.  Method assumes start time of 00:00:00
-    :param end: The yyyy-mm-dd of the endind day.  Method assumes end time of 23:59:59
+    :param start: String representation of a datetime in pagerduty format
+    :param end: String representation of a datetime in pagerduty format
     :return: Tuple with pairs of datetime objects representing the start and end of each period.
     """
-    pass
+
+    logging.debug(f'chunking {start} to {end}')
+    # convert the strings to datetime objects
+    #start = dt.datetime.strptime(''.join(start.rsplit(':', 1)), '%Y-%m-%dT%H:%M:%S-%z')
+    start = dt.datetime.strptime(start, '%Y-%m-%dT%H:%M:%S-%z')
+    logging.debug(f'start: {start}')
+    periods = []
+
+    # if the year and month of the period are the same, just return the dates as we got them
+
+
+
+    return periods
 
 
 def make_tz_aware(local_dt):

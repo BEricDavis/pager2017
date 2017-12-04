@@ -8,11 +8,7 @@ import calendar
 
 class PDSchedule:
     def __init__(self, start, end, schedule_id):
-        self.START = self.convert_to_pd_date(start)
-        logging.debug(f"START set to: {self.START}")
-
-        self.END = self.convert_to_pd_date(end)
-        logging.debug(f"END set to {self.END}")
+        pass
 
 
 
@@ -27,7 +23,7 @@ class PDSchedule:
         payload = f"?since={start}&until={end}&overflow=true"
         logging.debug(f'payload: {payload}')
 
-        schedule = pd.call()
+        schedule = pd.PagerRequests.call()
         return schedule
 
 
