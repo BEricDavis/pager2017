@@ -5,6 +5,7 @@ import logging
 import json
 import argparse
 import datetime as dt
+from lib import PDSchedule as pds
 from collections import defaultdict
 
 log_level = 'DEBUG'
@@ -13,9 +14,12 @@ eod = eod = dt.time(hour=23, minute=59, second=59)
 default_start = '20170101'
 default_end = '20170331'
 
-def main():
+def main(start=default_start, end=default_end):
     configure_logging(log_level)
     domain, services = load_config()
+
+    pd_start = pds.PDSchedule.convert_to_pd_date(start, sod)
+    pd_end = pds.PDSchedule.convert_to_pd_date(end, eod)
 
 
 
